@@ -16,7 +16,11 @@
 		<!--navbar_left end-->
 
 		<!-- content start -->
-						@include('admin.layout.table_dymatic')
+		<section id="main-content">
+    		<section class="wrapper">		
+						@include('admin.content.danh_muc_system')
+			</section>
+		</section>
 		<!-- content end -->
 		
 		<!-- footer start -->

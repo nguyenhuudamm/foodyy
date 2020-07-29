@@ -29,4 +29,14 @@
 	.adv-table .span6:nth-child(2){
 		display: inline;
 	}
+	.table-category-sys  .badge {
+	    cursor: pointer !important;
+	    padding: 8px !important;
+	}
+	.table-category-sys td, th{
+		text-align: center !important;
+	}
+	.button-modal a{
+		font-size: 30px !important;
+	} 
 </style>

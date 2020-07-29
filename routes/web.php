@@ -18,6 +18,7 @@ Route::get('admin', function () {
 
 Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục cha
+	// sàdsfdsfsdfds
 	Route::group(['prefix' => 'category'], function(){
 		Route::get('list_category', function(){
 			return view('admin.index');

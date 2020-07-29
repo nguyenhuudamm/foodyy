@@ -22,6 +22,7 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::get('list_category', function(){
 			return view('admin.index');
 		});
+		// adsfdfdsfdfsd
 	});
 	// quản lí danh mục con
 	Route::group(['prefix' => 'category_child'], function(){

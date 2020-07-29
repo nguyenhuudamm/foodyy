@@ -20,7 +20,7 @@ class TblMonanDanhmucConAdmin extends Migration
                 $table->unsignedBigInteger('id_category_child_sys');
                 $table->timestamps();
                 $table->foreign('id_monan')->references('id')->on('food');
-                $table->foreign('id_category_child_sysz')->references('id')->on('category_child_system');
+                $table->foreign('id_category_child_sys')->references('id')->on('category_child_system');
             });
         }
     }

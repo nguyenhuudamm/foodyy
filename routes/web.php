@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::group(['prefix' => 'category_child'], function(){
 		Route::get('admin1', function(){
 			return "heelo";
+			//nguyen huu dam
 		});
 	});
 });

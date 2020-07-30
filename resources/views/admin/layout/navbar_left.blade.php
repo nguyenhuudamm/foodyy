@@ -5,86 +5,60 @@
         <ul class="sidebar-menu" id="nav-accordion">
             <li>
                 <a class="active" href="index.html">
-                    <i class="fa fa-dashboard"></i>
-                    <span>Admin</span>
+                    <i class="fa fa-home"></i>
+                    <span>Hệ Thống</span>
                 </a>
             </li>
 
             <li class="sub-menu">
                 <a href="javascript:;" >
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>Danh mục system</span>
+                    <i class="fa fa-list-alt"></i>
+                    <span>Danh mục</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="product_list.html">Danh Sách</a></li>
-                    <li><a  href="product_details.html">Thêm</a></li>
+                    <li><a  href="{{route('admin.category')}}">Danh Sách</a></li>
+                    <li><a  data-toggle="modal" href="#myModal">Thêm</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>Danh mục con system</span>
+                    <i class="fa  fa-table"></i>
+                    <span>Danh mục con</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="product_list.html">Danh Sách</a></li>
-                    <li><a  href="product_details.html">Thêm</a></li>
+                    <li><a  href="{{route('admin.category_child')}}">Danh Sách</a></li>
+                    <li><a  data-toggle="modal" href="#myModal">Thêm</a></li>
                 </ul>
             </li>
            
            
             <li class="sub-menu">
                 <a href="javascript:;">
-                    <i class="fa fa-comments-o"></i>
+                    <i class="fa fa-list"></i>
                     <span>Danh mục shop</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="lobby.html">Danh sách</a></li>
-                    <li><a  href="chat_room.html">Thêm</a></li>
+                    <li><a  href="{{route('admin.category_shop')}}">Danh sách</a></li>
+                    <li><a  data-toggle="modal" href="#myModal">Thêm</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
                 <a href="javascript:;">
-                    <i class="fa fa-comments-o"></i>
-                    <span>Danh mục con shop</span>
+                    <i class="fa fa-th  "></i>
+                    <span>Món ăn</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="lobby.html">Danh sách</a></li>
-                    <li><a  href="chat_room.html">Thêm</a></li>
+                    <li><a  href="{{route('admin.foods')}}">Danh sách</a></li>
+                    <li><a  data-toggle="modal" href="#myModal">Thêm</a></li>
                 </ul>
             </li>
             
             <li>
                 <a  href="login.html">
-                    <i class="fa fa-user"></i>
-                    <span>Login Page</span>
+                    <i class="fa fa-sign-out"></i>
+                    <span>Đăng xuất</span>
                 </a>
             </li>
-
-            <!--multi level menu start-->
-            <li class="sub-menu">
-                <a href="javascript:;" >
-                    <i class="fa fa-sitemap"></i>
-                    <span>Multi level Menu</span>
-                </a>
-                <ul class="sub">
-                    <li><a  href="javascript:;">Menu Item 1</a></li>
-                    <li class="sub-menu">
-                        <a  href="boxed_page.html">Menu Item 2</a>
-                        <ul class="sub">
-                            <li><a  href="javascript:;">Menu Item 2.1</a></li>
-                            <li class="sub-menu">
-                                <a  href="javascript:;">Menu Item 3</a>
-                                <ul class="sub">
-                                    <li><a  href="javascript:;">Menu Item 3.1</a></li>
-                                    <li><a  href="javascript:;">Menu Item 3.2</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <!--multi level menu end-->
-
         </ul>
         <!-- sidebar menu end-->
     </div>

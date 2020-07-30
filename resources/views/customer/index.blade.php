@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>@yield('title')</title>
+	<title>Admin</title>
 	@include('admin.layout.head')
 </head>
 <body class="dark-sidebar-nav">
@@ -18,7 +18,7 @@
 		<!-- content start -->
 		<section id="main-content">
     		<section class="wrapper">		
-				@yield('content');
+						@include('admin.content.category_shop')
 			</section>
 		</section>
 		<!-- content end -->

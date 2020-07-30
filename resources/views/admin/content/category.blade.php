@@ -1,13 +1,23 @@
+@extends('admin.index')
+
+@section('title')
+  <?php echo 'Danh mục'; ?>
+@endsection
+
+@section('content')
 <div class="row">
   <div class="col-lg-12">
     <section class="card">
     <header class="card-header">
-    <div class="_name_table float-left pt-2"> Danh mục</div>
-    <div class="button-modal float-right">
-    <a class="text-success" data-toggle="modal" href="#myModal">
-        <i class="fa fa-plus"></i>
-    </a>
-    </div>
+      <div class="_name_table float-left pt-2"> Danh mục</div>
+      <div class="button-modal float-right">
+      <a class="text-success" data-toggle="modal" href="#myModal">
+          <i class="fa fa-plus"></i>
+      </a>
+      </div>
+       <div class="alert-edit alert alert-success w-100 d-inline-block p-2 pl-4 my-3" role="alert">
+          Thêm dữ liệu thành công !
+      </div>
     </header>
       <table class="table-category-sys table  table-advance table-hover">
         <thead>
@@ -22,7 +32,7 @@
           <tr>
             <td><a href="#">1</a></td>
             <td class="hidden-phone">Đồ ăn</td>
-            <td class="pl-4"><span class="badge badge-danger badge-xl label-mini">Tắt</span></td>
+            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
             <td>
             <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
             <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
@@ -32,7 +42,7 @@
           <tr>
             <td><a href="#">2</a></td>
             <td class="hidden-phone">Đặt bàn</td>
-            <td class="pl-4"><span class="badge badge-danger badge-xl label-mini">Tắt</span></td>
+            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
             <td>
             <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
             <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
@@ -42,7 +52,7 @@
           <tr>
             <td><a href="#">3</a></td>
             <td class="hidden-phone">Thực phẩm</td>
-            <td class="pl-4"><span class="badge badge-danger badge-xl label-mini">Tắt</span></td>
+            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
             <td>
             <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
             <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
@@ -52,7 +62,7 @@
           <tr>
             <td><a href="#">4</a></td>
             <td class="hidden-phone">Rượu bia</td>
-            <td class="pl-4"><span class="badge badge-danger badge-xl label-mini">Tắt</span></td>
+            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
             <td>
             <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
             <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
@@ -69,7 +79,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myModal">Thêm sản phẩm</h5>
+                <h5 class="modal-title" id="myModal">Thêm danh mục</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -79,7 +89,7 @@
                   <div class="form-group">
                       <label for="exampleInputEmail1">Tên danh mục</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tên danh mục">
-                      <small id="emailHelp" class="form-text text-danger">Danh mục không được để trống</small>
+                      <small id="emailHelp" class="form-text text-danger">Tên danh mục không được để trống</small>
                   </div>
                   
                   <div class="form-group form-check">
@@ -95,3 +105,4 @@
         </div>
     </div>
 </div>
+@endsection

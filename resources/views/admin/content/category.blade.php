@@ -30,15 +30,18 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#">1</a></td>
-            <td class="hidden-phone">Đồ ăn</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-            <td>
+            <td><a href="#"></a></td>
+            <td class="hidden-phone"></td>
+            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm"></button></td>
+            
+              
             <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
+            <form action="{{route('category_system.edit',$category->id)}}" method="get">
+              <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
+            </form>
             <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
             </td>
-          </tr>
+          </tr> 
           <tr>
             <td><a href="#">2</a></td>
             <td class="hidden-phone">Đặt bàn</td>

@@ -22,6 +22,7 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::group(['prefix' => 'category'], function(){
 		// danh sach
 		Route::get('/', 'category_system@index')->name('admin.category');
+		Route::resource('category_system','category_system');
 		//thêm
 		//sửa
 		//xóa

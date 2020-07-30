@@ -15,6 +15,8 @@
 
 
 //admin
+
+
 Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục cha
 	Route::group(['prefix' => 'category'], function(){
@@ -28,8 +30,10 @@ Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục con
 	Route::group(['prefix' => 'category_child'], function(){
 		//danh sach
-		Route::get('/', 'category_system@category_child')->name('admin.category_child');
+		Route::get('/', 'category_child@index')->name('admin.category_child');
 		//them
+		Route::get('add','HomeController@myform');
+		Route::post('add','HomeController@myformPost');
 		//sua
 		//xoa
 	});

@@ -49,156 +49,22 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @foreach ($categories as $category)
                     <tr>
-                        <td><a href="#">1</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
+                        <td><a href="#">{{$category->id}}</a></td>
+                        <td class="hidden-phone">{{$category->ten_danhmuc}}</td>
+                        @if ($category->trang_thai)
+                        <td class="pl-4"><button type="button" class="btn btn-success btn-sm">Bật</button></td>
+                        @else
                         <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
+                        @endif
                         <td>
                             <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
                             <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
                             <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
                         </td>
                     </tr>
-                    <tr>
-                        <td><a href="#">2</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">3</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td><a href="#">4</a></td>
-                        <td class="hidden-phone">Rượu bia</td>
-                        <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-                        <td>
-                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
                     <th>ID</th>

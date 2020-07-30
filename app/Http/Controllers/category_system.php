@@ -13,4 +13,5 @@ class category_system extends Controller
     public function category_child(){
     	return view('admin.content.category_child');
     }
+
 }

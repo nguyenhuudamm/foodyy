@@ -4,8 +4,8 @@
 <meta name="author" content="Mosaddek">
 <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 <link rel="shortcut icon" href="img/favicon.html">
-
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <!-- Bootstrap core CSS -->
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('css/bootstrap-reset.css')}}" rel="stylesheet">

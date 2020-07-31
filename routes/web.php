@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +53,14 @@ Route::group(['prefix' => 'admin'], function(){
 		// danh sach
 		// Route::get('/', 'menu_foods@index')->name('admin.category_shop');
 		//thêm
+		Route::post('/add', 'category_shop@add_category')->name('admin.add_category');
+
 		//sửa
+		Route::get('/view-update/{id}', 'category_shop@index')->name('admin.view-update');
+		Route::put('/update', 'category_shop@add_category')->name('admin.add_category');
 		//xóa
+
+		Route::post('/', 'category_shop@delete_category')->name('admin.delete_category');
 		
 	// });
 
@@ -93,10 +100,11 @@ Route::group(['prefix' => 'shop'], function(){
 	});
 	//TEST
 	Route::get('test', function(){
-		$shop = DB::table('shop')->first();
-		echo $shop->id;
+		// $shop = DB::table('shop')->first();
+		// echo $shop->id;
 	});
 
 });
 
 
+?>

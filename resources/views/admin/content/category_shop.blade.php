@@ -11,7 +11,7 @@
     <header class="card-header">
       <div class="_name_table float-left pt-2"> Danh mục</div>
       <div class="button-modal float-right">
-      <a class="text-success" data-toggle="modal" href="#myModal">
+      <a class="text-success " data-toggle="modal" href="#myModal">
           <i class="fa fa-plus"></i>
       </a>
       </div>
@@ -29,46 +29,17 @@
           </tr>
         </thead>
         <tbody>
+          @foreach($list as $value)
           <tr>
-            <td><a href="#">1</a></td>
-            <td class="hidden-phone">Đồ ăn</td>
+            <td><a href="#">{{$value->id}}</a></td>
+            <td class="hidden-phone">{{$value->ten_danhmuc}}</td>
             <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
             <td>
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
+              <a class="btn btn-primary btn-sm" href="/admin/category_shop/view-update/{{$value->id}}"><i class="fa fa-pencil"></i></a>
+              <a class="btn btn-danger btn-sm delete_category" href="" id="{{$value->id}}"><i class="fa fa-trash-o"></i> </a>
             </td>
           </tr>
-          <tr>
-            <td><a href="#">2</a></td>
-            <td class="hidden-phone">Đặt bàn</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-            <td>
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><a href="#">3</a></td>
-            <td class="hidden-phone">Thực phẩm</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-            <td>
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><a href="#">4</a></td>
-            <td class="hidden-phone">Rượu bia</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-            <td>
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-            </td>
-          </tr>
+          @endforeach
         </tbody>
       </table>
     </section>
@@ -85,30 +56,35 @@
                 </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form action="/admin/category_shop/add" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                   <div class="form-group">
                       <label for="exampleInputEmail1">Quán ăn</label>
-                      <select class="custom-select custom-select-sm ">
-                          <option selected value="1">1</option>
-                          <option value="2">2</option>
+                      <select name="id_shop" id="exampleInputEmail1" class="custom-select custom-select-sm ">
+                        @foreach ($listShop as $item)
+                        <option value="{{$item->id}}">{{$item->ten_shop}}</option>
+                        @endforeach
                       </select>
                   </div>
                   <div class="form-group">
                       <label for="exampleInputEmail1">Tên danh mục</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tên danh mục">
+                      <input type="text" class="form-control" name="name_category" aria-describedby="emailHelp" placeholder="Tên danh mục">
                       <small id="emailHelp" class="form-text text-danger">Tên danh mục không được để trống</small>
                   </div>
                   
                   <div class="form-group form-check">
-                      <input type="checkbox" class="form-check-input" checked id="exampleCheck1">
+                      <input type="checkbox" value="0" class="form-check-input" name="trang_thai" checked id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Ẩn/Hiện</label>
                   </div>
-                </div>
-                <div class="modal-footer">
+                  <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary">Thêm</button>
+                    <button type="submit" class="btn btn-primary add_category">Thêm</button>
                 </div>
               </form>
+                </div>
+            
+
         </div>
     </div>
 </div>

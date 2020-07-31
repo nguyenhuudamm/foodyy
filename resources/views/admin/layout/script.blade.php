@@ -98,4 +98,8 @@
     
      error -->
 
+<<<<<<< HEAD
 @include('admin.returnHTML.ajax_foods')
+=======
+     {{-- @include('admin.returnHTML.fileajaxx') --}}
+>>>>>>> master

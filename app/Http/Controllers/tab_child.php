@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\model_category_child;
+use App\model_tab_childs;
 use Illuminate\Http\Request;
 
-class category_child extends Controller
+class tab_child extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class category_child extends Controller
      */
     public function index()
     {
-        $categories = model_category_child::all();
+        $categories = model_tab_childs::all();
         return view('admin.content.category_child',['categories'=>$categories]);
     }
 
@@ -42,10 +42,10 @@ class category_child extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\model_category_child  $model_category_child
+     * @param  \App\model_tab_childs  $model_tab_childs
      * @return \Illuminate\Http\Response
      */
-    public function show(model_category_child $model_category_child)
+    public function show(model_tab_childs $model_tab_childs)
     {
         //
     }
@@ -53,10 +53,10 @@ class category_child extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\model_category_child  $model_category_child
+     * @param  \App\model_tab_childs  $model_tab_childs
      * @return \Illuminate\Http\Response
      */
-    public function edit(model_category_child $model_category_child)
+    public function edit(model_tab_childs $model_tab_childs)
     {
         //
     }
@@ -65,10 +65,10 @@ class category_child extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\model_category_child  $model_category_child
+     * @param  \App\model_tab_childs  $model_tab_childs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, model_category_child $model_category_child)
+    public function update(Request $request, model_tab_childs $model_tab_childs)
     {
         //
     }
@@ -76,10 +76,10 @@ class category_child extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\model_category_child  $model_category_child
+     * @param  \App\model_tab_childs  $model_tab_childs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(model_category_child $model_category_child)
+    public function destroy(model_tab_childs $model_tab_childs)
     {
         //
     }

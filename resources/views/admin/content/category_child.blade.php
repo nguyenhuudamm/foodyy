@@ -52,8 +52,8 @@
                     @foreach ($categories as $category)
                     <tr>
                         <td><a href="#">{{$category->id}}</a></td>
-                        <td class="hidden-phone">{{$category->ten_danhmuc}}</td>
-                        @if ($category->trang_thai)
+                        <td class="hidden-phone">{{$category->name}}</td>
+                        @if ($category->status == 1)
                         <td class="pl-4"><button type="button" class="btn btn-success btn-sm">Bật</button></td>
                         @else
                         <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>

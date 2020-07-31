@@ -97,7 +97,7 @@
     <script src="{{asset('js/owl.carousel.js')}}" ></script>
     
      error -->
-
+@include('admin.returnHTML.ajax_tabs')
 <<<<<<< HEAD
 @include('admin.returnHTML.ajax_foods')
 =======

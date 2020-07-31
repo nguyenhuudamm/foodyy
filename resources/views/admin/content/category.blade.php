@@ -29,49 +29,22 @@
           </tr>
         </thead>
         <tbody>
+          @foreach($tabs as $value)
           <tr>
-            <td><a href="#"></a></td>
-            <td class="hidden-phone"></td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm"></button></td>
-            
-              
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <form action="{{route('category_system.edit',$category->id)}}" method="get">
-              <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            </form>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-            </td>
-          </tr> 
-          <tr>
-            <td><a href="#">2</a></td>
-            <td class="hidden-phone">Đặt bàn</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
+            <td><a href="#">{{$value->id}}</a></td>
+            <td class="hidden-phone">{{$value->name}}</td>
+            @if($value->status == 1)
+            <td class="pl-4"><button id="{{$value->id}}" type="button" class="btn btn-danger btn-sm click_change">Tắt</button></td>
+            @else
+            <td class="pl-4"><button id="{{$value->id}}" type="button" class="btn btn-success btn-sm click_change">Bật</button></td>
+            @endif
             <td>
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
+              <button id="{{$value->id}}" class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
+              <button id="{{$value->id}}" class="btn btn-primary btn-sm editTab"><i class="fa fa-pencil"></i></button>
+              <button id="{{$value->id}}" class="btn btn-danger btn-sm deleteTab"><i class="fa fa-trash-o "></i></button>
             </td>
           </tr>
-          <tr>
-            <td><a href="#">3</a></td>
-            <td class="hidden-phone">Thực phẩm</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-            <td>
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><a href="#">4</a></td>
-            <td class="hidden-phone">Rượu bia</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-            <td>
-            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>
-            </td>
-          </tr>
+          @endforeach
         </tbody>
       </table>
     </section>
@@ -88,15 +61,16 @@
                 </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form method="POST" id="form_tabs">
                   <div class="form-group">
                       <label for="exampleInputEmail1">Tên danh mục</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tên danh mục">
+                      <input type="hidden" class="form-control" value="" id="idTab" name="idTab">
+                      <input type="text" class="form-control" id="nameTab" name="nameTab" aria-describedby="emailHelp" placeholder="Tên danh mục">
                       <small id="emailHelp" class="form-text text-danger">Tên danh mục không được để trống</small>
                   </div>
                   
                   <div class="form-group form-check">
-                      <input type="checkbox" class="form-check-input" checked id="exampleCheck1">
+                      <input type="checkbox" class="form-check-input" name="statusTab" checked value="1" id="statusTab">
                       <label class="form-check-label" for="exampleCheck1">Ẩn/Hiện</label>
                   </div>
                 </div>

@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
        
-       //$this->call(tabs_seed::class);
-       //$this->call(tab_childs_seed::class);
-       //$this->call(shop_seed::class);
+      // $this->call(tabs_seed::class);
+      // $this->call(tab_childs_seed::class);
+      // $this->call(shop_seed::class);
        $this->call(menu_foods_seed::class);
     }
 }

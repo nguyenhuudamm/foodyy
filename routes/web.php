@@ -16,30 +16,29 @@
 
 //admin
 
-
+Route::get('test', 'tabs@editTab');
 Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục cha
 	Route::group(['prefix' => 'category'], function(){
 		// danh sach
-<<<<<<< HEAD
-		Route::get('/', 'category_system@index')->name('admin.category');
-		Route::resource('category_system','category_system');
-=======
 		Route::get('/', 'tabs@index')->name('admin.category');
->>>>>>> master
+		//Route::resource('category_system','category_system');
 		//thêm
+		Route::post('addTab', 'tabs@addTab')->name('tabs.addTab');
 		//sửa
+		Route::post('editTab', 'tabs@editTab')->name('tabs.editTab');
+		// cập nhật
+		Route::post('updateTab', 'tabs@updateTab')->name('tabs.updateTab');
 		//xóa
+		Route::post('deleteTab', 'tabs@deleteTab')->name('tabs.deleteTab');
+		// sua trang thai
+		Route::post('/', 'tabs@changStatus')->name('tabs.changStatus');
 		
 	});
 	// quản lí danh mục con
 	Route::group(['prefix' => 'category_child'], function(){
 		//danh sach
-<<<<<<< HEAD
 		Route::get('/', 'tabs@category_child')->name('admin.category_child');
-=======
-		Route::get('/', 'category_child@index')->name('admin.category_child');
->>>>>>> master
 		//them
 		Route::get('add','HomeController@myform');
 		Route::post('add','HomeController@myformPost');

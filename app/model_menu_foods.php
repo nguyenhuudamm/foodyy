@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class model_foods_category extends Model
+class model_menu_foods extends Model
 {
-     protected $table = "tbl_food_categorychildsys";
+     protected $table = "menu_foods";
     public $timetamps = false;
 }

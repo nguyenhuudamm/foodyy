@@ -11,128 +11,130 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(category_shopSeeder::class);
-       // $this->call(category_child_systemSeeder::class);
-      // $this->call(shopSeeder::class);
-       $this->call(categoryShopSeeder::class);
+       
+       //$this->call(tabs_seed::class);
+       //$this->call(tab_childs_seed::class);
+       //$this->call(shop_seed::class);
+       $this->call(menu_foods_seed::class);
     }
 }
 // tạo Seeder cho bảng category_shop
-class category_shopSeeder extends Seeder{
+class tabs_seed extends Seeder{
 
 	public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        DB::table('category_system')->insert([
-        	['ten_danhmuc'=>'Đồ ăn', 'ten_dm_khongdau'=>'do-an'],
-    		['ten_danhmuc'=>'Đặt bàn', 'ten_dm_khongdau'=>'dat-ban'],
-    		['ten_danhmuc'=>'Rượu bia', 'ten_dm_khongdau'=>'ruou-bia'],
-    		['ten_danhmuc'=>'Thực phẩm', 'ten_dm_khongdau'=>'thuc-pham'],
-    		['ten_danhmuc'=>'Hoa', 'ten_dm_khongdau'=>'hoa'],
-    		['ten_danhmuc'=>'Sản phẩm', 'ten_dm_khongdau'=>'san-pham']
+        DB::table('tabs')->insert([
+        	['name'=>'Đồ ăn', 'unsigned_name'=>'do-an'],
+    		['name'=>'Đặt bàn', 'unsigned_name'=>'dat-ban'],
+    		['name'=>'Rượu bia', 'unsigned_name'=>'ruou-bia'],
+    		['name'=>'Thực phẩm', 'unsigned_name'=>'thuc-pham'],
+    		['name'=>'Hoa', 'unsigned_name'=>'hoa'],
+    		['name'=>'Sản phẩm', 'unsigned_name'=>'san-pham']
         ]);
     }
 }
 
 // tạo Seeder cho bảng category_child_system
-class category_child_systemSeeder extends Seeder{
+class tab_childs_seed extends Seeder{
 
-	public function run()
+    public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        DB::table('category_child_system')->insert([
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Đồ ăn', 'ten_dm_khongdau'=>'do-an'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Đồ uống', 'ten_dm_khongdau'=>'do-uong'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Đồ chay', 'ten_dm_khongdau'=>'do-chay'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Bánh kem', 'ten_dm_khongdau'=>'banh-kem'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Tráng miệng', 'ten_dm_khongdau'=>'trang-mieng'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Vỉa hè', 'ten_dm_khongdau'=>'via-he'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Pizza/Burger', 'ten_dm_khongdau'=>'pizza-burger'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Món gà', 'ten_dm_khongdau'=>'mon-ga'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Món lẩu', 'ten_dm_khongdau'=>'mon-lau'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Sushi', 'ten_dm_khongdau'=>'sushi'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Mì phở', 'ten_dm_khongdau'=>'mi-pho'],
-        	['id_category_system'=> 1, 'ten_danhmuc'=>'Cơm hộp', 'ten_dm_khongdau'=>'com-hop'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Đặc sản', 'ten_dm_khongdau'=>'dac-san'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Ăn chay', 'ten_dm_khongdau'=>'an-chay'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Trái cây', 'ten_dm_khongdau'=>'trai-cay'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Thịt trứng', 'ten_dm_khongdau'=>'thit-trung'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Hải sản', 'ten_dm_khongdau'=>'hai-san'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Rau củ', 'ten_dm_khongdau'=>'rau-cu'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Gạo mì', 'ten_dm_khongdau'=>'gao-mi'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Đồ uống/Ăn vật', 'ten_dm_khongdau'=>'do-uong-an-vat'],
-        	['id_category_system'=> 4, 'ten_danhmuc'=>'Gia vị', 'ten_dm_khongdau'=>'gia-vi'],
-        	['id_category_system'=> 3, 'ten_danhmuc'=>'Bia', 'ten_dm_khongdau'=>'bia'],
-        	['id_category_system'=> 3, 'ten_danhmuc'=>'Rượu', 'ten_dm_khongdau'=>'ruou'],
-        	['id_category_system'=> 5, 'ten_danhmuc'=>'Chúc mừng', 'ten_dm_khongdau'=>'chuc-mung'],
-        	['id_category_system'=> 5, 'ten_danhmuc'=>'Sinh nhật', 'ten_dm_khongdau'=>'sinh-nhat'],
-        	['id_category_system'=> 5, 'ten_danhmuc'=>'Tình yêu', 'ten_dm_khongdau'=>'tinh-yeu'],
-        	['id_category_system'=> 5, 'ten_danhmuc'=>'Chia buồn', 'ten_dm_khongdau'=>'chia-buon'],
-        	['id_category_system'=> 5, 'ten_danhmuc'=>'Cây cảnh', 'ten_dm_khongdau'=>'cay-canh'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Mỹ phẩm', 'ten_dm_khongdau'=>'my-pham'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Tã bỉm', 'ten_dm_khongdau'=>'ta-bim'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Sữa', 'ten_dm_khongdau'=>'sua'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Đồ chơi', 'ten_dm_khongdau'=>'cay-canh'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Thiết bị', 'ten_dm_khongdau'=>'thiet-bi'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Dụng cụ', 'ten_dm_khongdau'=>'dung-cu'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Quần áo', 'ten_dm_khongdau'=>'quan-ao'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Giày dép', 'ten_dm_khongdau'=>'giay-dep'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Điện tử', 'ten_dm_khongdau'=>'dien-tu'],
-        	['id_category_system'=> 6, 'ten_danhmuc'=>'Trang sức', 'ten_dm_khongdau'=>'trang-suc']
+        DB::table('tab_childs')->insert([
+            ['tab_id'=> 1, 'name'=>'Đồ ăn', 'unsigned_name'=>'do-an'],
+            ['tab_id'=> 1, 'name'=>'Đồ uống', 'unsigned_name'=>'do-uong'],
+            ['tab_id'=> 1, 'name'=>'Đồ chay', 'unsigned_name'=>'do-chay'],
+            ['tab_id'=> 1, 'name'=>'Bánh kem', 'unsigned_name'=>'banh-kem'],
+            ['tab_id'=> 1, 'name'=>'Tráng miệng', 'unsigned_name'=>'trang-mieng'],
+            ['tab_id'=> 1, 'name'=>'Vỉa hè', 'unsigned_name'=>'via-he'],
+            ['tab_id'=> 1, 'name'=>'Pizza/Burger', 'unsigned_name'=>'pizza-burger'],
+            ['tab_id'=> 1, 'name'=>'Món gà', 'unsigned_name'=>'mon-ga'],
+            ['tab_id'=> 1, 'name'=>'Món lẩu', 'unsigned_name'=>'mon-lau'],
+            ['tab_id'=> 1, 'name'=>'Sushi', 'unsigned_name'=>'sushi'],
+            ['tab_id'=> 1, 'name'=>'Mì phở', 'unsigned_name'=>'mi-pho'],
+            ['tab_id'=> 1, 'name'=>'Cơm hộp', 'unsigned_name'=>'com-hop'],
+            ['tab_id'=> 4, 'name'=>'Đặc sản', 'unsigned_name'=>'dac-san'],
+            ['tab_id'=> 4, 'name'=>'Ăn chay', 'unsigned_name'=>'an-chay'],
+            ['tab_id'=> 4, 'name'=>'Trái cây', 'unsigned_name'=>'trai-cay'],
+            ['tab_id'=> 4, 'name'=>'Thịt trứng', 'unsigned_name'=>'thit-trung'],
+            ['tab_id'=> 4, 'name'=>'Hải sản', 'unsigned_name'=>'hai-san'],
+            ['tab_id'=> 4, 'name'=>'Rau củ', 'unsigned_name'=>'rau-cu'],
+            ['tab_id'=> 4, 'name'=>'Gạo mì', 'unsigned_name'=>'gao-mi'],
+            ['tab_id'=> 4, 'name'=>'Đồ uống/Ăn vật', 'unsigned_name'=>'do-uong-an-vat'],
+            ['tab_id'=> 4, 'name'=>'Gia vị', 'unsigned_name'=>'gia-vi'],
+            ['tab_id'=> 3, 'name'=>'Bia', 'unsigned_name'=>'bia'],
+            ['tab_id'=> 3, 'name'=>'Rượu', 'unsigned_name'=>'ruou'],
+            ['tab_id'=> 5, 'name'=>'Chúc mừng', 'unsigned_name'=>'chuc-mung'],
+            ['tab_id'=> 5, 'name'=>'Sinh nhật', 'unsigned_name'=>'sinh-nhat'],
+            ['tab_id'=> 5, 'name'=>'Tình yêu', 'unsigned_name'=>'tinh-yeu'],
+            ['tab_id'=> 5, 'name'=>'Chia buồn', 'unsigned_name'=>'chia-buon'],
+            ['tab_id'=> 5, 'name'=>'Cây cảnh', 'unsigned_name'=>'cay-canh'],
+            ['tab_id'=> 6, 'name'=>'Mỹ phẩm', 'unsigned_name'=>'my-pham'],
+            ['tab_id'=> 6, 'name'=>'Tã bỉm', 'unsigned_name'=>'ta-bim'],
+            ['tab_id'=> 6, 'name'=>'Sữa', 'unsigned_name'=>'sua'],
+            ['tab_id'=> 6, 'name'=>'Đồ chơi', 'unsigned_name'=>'cay-canh'],
+            ['tab_id'=> 6, 'name'=>'Thiết bị', 'unsigned_name'=>'thiet-bi'],
+            ['tab_id'=> 6, 'name'=>'Dụng cụ', 'unsigned_name'=>'dung-cu'],
+            ['tab_id'=> 6, 'name'=>'Quần áo', 'unsigned_name'=>'quan-ao'],
+            ['tab_id'=> 6, 'name'=>'Giày dép', 'unsigned_name'=>'giay-dep'],
+            ['tab_id'=> 6, 'name'=>'Điện tử', 'unsigned_name'=>'dien-tu'],
+            ['tab_id'=> 6, 'name'=>'Trang sức', 'unsigned_name'=>'trang-suc']
         ]);
     }
 }
 
 // tạo Seeder cho bảng shop
-class shopSeeder extends Seeder{
+class shop_seed extends Seeder{
 
-	public function run()
+    public function run()
     {
         // $this->call(UsersTableSeeder::class);
         DB::table('shop')->insert([
-        	[
-        		'id_user'=>1, 
-        		'ten_shop'=>'Nước Mía Mỹ Tho MT68',
-        		'ten_khongdau' => 'nuoc-mia-my-tho-mt69',
-        		'tinh_thanh' => 'Cần Thơ',
-        		'quan_huyen' => 'Quận Ninh Kiều',
-        		'phuong_xa' => '',
-        		'dia_chi' => '41 Mạc Thiên Tích'
-        	],
-			[
-        		'id_user'=>2, 
-        		'ten_shop'=>'Ghiền - Ăn Vặt',
-        		'ten_khongdau' => 'ghien-an-vat',
-        		'tinh_thanh' => 'Cần Thơ',
-        		'quan_huyen' => 'Quận Ninh Kiều',
-        		'phuong_xa' => 'P. An Lạc',
-        		'dia_chi' => '2 Phan Văn Trị'
-        	]
+            [
+                'user_id'=>1,
+                'tab_id'=>1,
+                'name'=>'Nước Mía Mỹ Tho MT68',
+                'unsigned_name' => 'nuoc-mia-my-tho-mt69',
+                'provincial' => 'Cần Thơ',
+                'area' => 'Quận Ninh Kiều',
+                'address' => '41 Mạc Thiên Tích'
+            ],
+            [
+                'user_id'=>2,
+                'tab_id '=>1,
+                'name'=>'Ghiền - Ăn Vặt',
+                'unsigned_name' => 'ghien-an-vat',
+                'provincial' => 'Cần Thơ',
+                'area' => 'Quận Ninh Kiều',
+                'address' => '2 Phan Văn Trị'
+            ]
         ]);
     }
 }
 
 // tạo Seeder cho bảng category_shop
-class categoryShopSeeder extends Seeder{
+class menu_foods_seed extends Seeder{
 
-	public function run()
+    public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        DB::table('category_shop')->insert([
-        	['id_shop'=>2, 'ten_danhmuc'=>'Món hot 10k', 'ten_khongdau' => 'mon-hot-10k'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Trà', 'ten_khongdau' => 'tra'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Đá xay', 'ten_khongdau' => 'da-xay'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Chè', 'ten_khongdau' => 'che'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Trà sữa', 'ten_khongdau' => 'tra-sua'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Xiên que', 'ten_khongdau' => 'xien-que'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Phần ăn vật', 'ten_khongdau' => 'phan-an-vat'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Soda ý', 'ten_khongdau' => 'soda-y'],
-        	['id_shop'=>2, 'ten_danhmuc'=>'Mojito', 'ten_khongdau' => 'mojito'],
-        	['id_shop'=>1, 'ten_danhmuc'=>'Giờ vàng 1 đô', 'ten_khongdau' => 'gio-vang-1-do'],
-        	['id_shop'=>1, 'ten_danhmuc'=>'combo freeship', 'ten_khongdau' => 'combo-freeship'],
-        	['id_shop'=>1, 'ten_danhmuc'=>'Đặc biệt', 'ten_khongdau' => 'dac-biet'],
-        	['id_shop'=>1, 'ten_danhmuc'=>'menu', 'ten_khongdau' => 'menu']
+        DB::table('menu_foods')->insert([
+            ['shop_id'=>2, 'name'=>'Món hot 10k', 'unsigned_name' => 'mon-hot-10k'],
+            ['shop_id'=>2, 'name'=>'Trà', 'unsigned_name' => 'tra'],
+            ['shop_id'=>2, 'name'=>'Đá xay', 'unsigned_name' => 'da-xay'],
+            ['shop_id'=>2, 'name'=>'Chè', 'unsigned_name' => 'che'],
+            ['shop_id'=>2, 'name'=>'Trà sữa', 'unsigned_name' => 'tra-sua'],
+            ['shop_id'=>2, 'name'=>'Xiên que', 'unsigned_name' => 'xien-que'],
+            ['shop_id'=>2, 'name'=>'Phần ăn vật', 'unsigned_name' => 'phan-an-vat'],
+            ['shop_id'=>2, 'name'=>'Soda ý', 'unsigned_name' => 'soda-y'],
+            ['shop_id'=>2, 'name'=>'Mojito', 'unsigned_name' => 'mojito '],
+            ['shop_id'=>1, 'name'=>'Giờ vàng 1 đô', 'unsigned_name' => 'gio-vang-1-do'],
+            ['shop_id'=>1, 'name'=>'combo freeship', 'unsigned_name' => 'combo-freeship'],
+            ['shop_id'=>1, 'name'=>'Đặc biệt', 'unsigned_name' => 'dac-biet'],
+            ['shop_id'=>1, 'name'=>'menu', 'unsigned_name' => 'menu']
         ]);
     }
 }
+
 

@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class model_foods extends Model
 {
-     protected $table = "food";
+    protected $table = "foods";
     public $timetamps = false;
 }

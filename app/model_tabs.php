@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class model_category_shop extends Model
+class model_tabs extends Model
 {
-     protected $table = "category_shop";
+     protected $table = "tabs";
     public $timetamps = false;
 }

@@ -5,7 +5,7 @@
 <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 <link rel="shortcut icon" href="img/favicon.html">
 
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Bootstrap core CSS -->
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('css/bootstrap-reset.css')}}" rel="stylesheet">
@@ -95,16 +95,30 @@
 	    margin-top: 3px;
 	}
 
-.img-icon span {background: white;height: 34px;width: 34px;display: inline-block;border-radius: 50%;line-height: 31px;text-align: center;margin-bottom: 3px;}
+	.img-icon span {background: white;height: 34px;width: 34px;display: inline-block;border-radius: 50%;line-height: 31px;text-align: center;margin-bottom: 3px;}
 
-span {}
+	span {}
 
-.img-icon span img {width: 30px;}
+	.img-icon span img {width: 30px;}
 
 	.btn-handling.flex-fill {}
 
 	._1_food .btn-handling .btn {
 	    font-size: 10px;
 	    padding: 1px 7px;
+	}
+	._image_food{
+		margin-top: 5px;
+	}
+	._image_food ._1_img{
+		width: 80px;
+		height: 80px;
+		margin-right: 5px;
+	}
+	._image_food ._1_img:last-child{
+		margin-right: 0px;
+	}
+	._image_food ._1_img img{
+		object-fit: cover;
 	}
 </style>

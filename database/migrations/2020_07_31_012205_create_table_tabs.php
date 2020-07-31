@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Admin extends Migration
+class CreateTableTabs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,17 @@ class Admin extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('admin')) {
-            Schema::create('admin', function (Blueprint $table) {
+        if(!Schema::hasTable('tabs')) {
+            Schema::create('tabs', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('name');
-                $table->string('last_name');
-                $table->string('email')->nullable();
-                $table->string('password')->nullable();
-                $table->string('phone')->nullable();
-                $table->integer('gender')->nullable();
-                $table->string('birth_date')->nullable();
+                $table->string('unsigned_name')->nullable();
+                $table->integer('status')->default(1);
                 $table->timestamps();
             });
         }
     }
-
+ 
     /**
      * Reverse the migrations.
      *
@@ -35,6 +31,6 @@ class Admin extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('tabs');
     }
 }

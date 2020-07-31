@@ -21,8 +21,12 @@ Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục cha
 	Route::group(['prefix' => 'category'], function(){
 		// danh sach
+<<<<<<< HEAD
 		Route::get('/', 'category_system@index')->name('admin.category');
 		Route::resource('category_system','category_system');
+=======
+		Route::get('/', 'tabs@index')->name('admin.category');
+>>>>>>> master
 		//thêm
 		//sửa
 		//xóa
@@ -31,7 +35,11 @@ Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục con
 	Route::group(['prefix' => 'category_child'], function(){
 		//danh sach
+<<<<<<< HEAD
+		Route::get('/', 'tabs@category_child')->name('admin.category_child');
+=======
 		Route::get('/', 'category_child@index')->name('admin.category_child');
+>>>>>>> master
 		//them
 		Route::get('add','HomeController@myform');
 		Route::post('add','HomeController@myformPost');
@@ -42,7 +50,7 @@ Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục quán ăn
 	Route::group(['prefix' => 'category_shop'], function(){
 		// danh sach
-		Route::get('/', 'category_shop@index')->name('admin.category_shop');
+		Route::get('/', 'menu_foods@index')->name('admin.category_shop');
 		//thêm
 		//sửa
 		//xóa
@@ -52,11 +60,13 @@ Route::group(['prefix' => 'admin'], function(){
 	// quản lí món ăn
 	Route::group(['prefix' => 'foods'], function(){
 		// danh sach
-		Route::get('/', 'category_shop@foods')->name('admin.foods');
+		Route::get('/', 'foods@foods')->name('admin.foods');
 		//thêm
 		//sửa
 		//xóa
-		
+		//test
+		Route::post('test', 'foods@test')->name('foods.test');
+		Route::post('uploadFile', 'foods@uploadFile')->name('foods.uploadFile');
 	});
 });
 

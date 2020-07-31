@@ -16,8 +16,8 @@
     </section>
     <section class="card">
       <header class="card-header">
-        <a class="text-success" data-toggle="modal" href="#myModal">
-              <i class="fa fa-plus mr-3 "></i> Thêm sản phẩm
+        <a class="text-success click-add" data-toggle="modal" href="#myModal">
+              <i class="fa fa-plus mr-3 "></i> Thêm món ăn
         </a>
       </header>
     </section>
@@ -157,22 +157,28 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="POST" id="form_add">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                           <label for="">Tên món ăn</label>
                           <input type="text" class="form-control" id="" aria-describedby="emailHelp" placeholder="Tên danh mục">
-                          <small id="emailHelp" class="form-text text-danger">Tên món ăn không được để trống</small>
+                          <small id="emailHelp" class="error form-text text-danger">Tên món ăn không được để trống</small>
                       </div>
                       <div class="form-group">
                           <label for="">Ảnh đại diện món ăn</label>
-                          <input type="file" class="form-control" id="" aria-describedby="emailHelp" placeholder="Tên danh mục">
-                          <small id="emailHelp" class="form-text text-danger">Ảnh đại diện không được để trống</small>
+                          <input type="file" class="form-control" name="file" id="file" aria-describedby="emailHelp">
+                          <small id="emailHelp" class="error form-text text-danger">Ảnh đại diện không được để trống</small>
+                          <div class="_image_food _image_food_1 d-flex">
+                            
+                          </div>
                       </div>
                       <div class="form-group">
                           <label for="">Ảnh chi tiết món ăn</label>
-                          <input type="file" class="form-control" id="" aria-describedby="emailHelp" placeholder="Tên danh mục">
+                          <input type="file" class="form-control" name="files" id="files" aria-describedby="emailHelp" multiple>
+                          <div class="_image_food _image_food_2 d-flex">
+                            
+                          </div>
                       </div>
                       <div class="form-group">
                         <label class="pro-lab">Thuộc quán ăn</label>
@@ -197,10 +203,10 @@
                       <div class="form-group">
                           <label for="">Giá</label>
                           <input type="text" class="form-control" id="" aria-describedby="emailHelp" placeholder="Giá món ăn">
-                          <small id="emailHelp" class="form-text text-danger">Giá món ăn không được để trống</small>
+                          <small id="emailHelp" class="error form-text text-danger">Giá món ăn không được để trống</small>
                       </div>
                       <div class="form-group">
-                          <label for="">Giá</label>
+                          <label for="">Giá giảm</label>
                           <input type="text" class="form-control" id="" aria-describedby="emailHelp" placeholder="0.000">
                       </div>
                       <div class="form-group">
@@ -232,3 +238,4 @@
 </div>
 <!-- modal -->
 @endsection
+

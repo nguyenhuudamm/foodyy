@@ -5,13 +5,22 @@
 @endsection
 
 @section('content')
+
+<script>
+  window.setTimeout(function() {
+$(".alert").fadeTo(500, 0).slideUp(500, function(){
+  $(this).remove(); 
+});
+}, 2000); 
+</script>
+@include('admin.returnHTML.ajax_category_shop')
 <div class="row">
   <div class="col-lg-12">
     <section class="card">
     <header class="card-header">
       <div class="_name_table float-left pt-2"> Danh mục</div>
       <div class="button-modal float-right">
-      <a class="text-success " data-toggle="modal" href="#myModal">
+      <a class="text-success " data-toggle="modal" href="#menuFoodsModal">
           <i class="fa fa-plus"></i>
       </a>
       </div>
@@ -32,12 +41,14 @@
           @foreach($list as $value)
           <tr>
             <td><a href="#">{{$value->id}}</a></td>
-            <td class="hidden-phone">{{$value->ten_danhmuc}}</td>
-            <td class="pl-4"><button type="button" class="btn btn-danger btn-sm">Tắt</button></td>
-            <td>
-              <a class="btn btn-primary btn-sm" href="/admin/category_shop/view-update/{{$value->id}}"><i class="fa fa-pencil"></i></a>
-              <a class="btn btn-danger btn-sm delete_category" href="" id="{{$value->id}}"><i class="fa fa-trash-o"></i> </a>
-            </td>
+            <td class="hidden-phone">{{$value->name}}</td>
+            @if($value->status == 1)
+            <td class="pl-4"><button id="{{$value->id}}" type="button" class="btn btn-danger btn-sm click_change_menu_foods">Tắt</button></td>
+            @else
+            <td class="pl-4"><button id="{{$value->id}}" type="button" class="btn btn-success btn-sm click_change_menu_foods">Bật</button></td>
+            @endif            <td>
+              <button id="{{$value->id}}" class="btn btn-primary btn-sm editMenuFoods"><i class="fa fa-pencil"></i></button>
+              <button id="{{$value->id}}" class="btn btn-danger btn-sm deleteMenuFoods"><i class="fa fa-trash-o "></i></button></td>
           </tr>
           @endforeach
         </tbody>
@@ -46,7 +57,7 @@
   </div>
 </div>
  <!-- Modal -->
-<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade " id="menuFoodsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -56,30 +67,30 @@
                 </button>
             </div>
             <div class="modal-body">
-              <form action="/admin/category_shop/add" method="POST">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <form id="formMenuFoods" method="POST">
+                <input type="hidden" class="form-control" value="" id="idMenuFoods" name="idMenuFoods">
 
                   <div class="form-group">
                       <label for="exampleInputEmail1">Quán ăn</label>
-                      <select name="id_shop" id="exampleInputEmail1" class="custom-select custom-select-sm ">
+                      <select name="MF_id_shop" id="MF_id_shop" class="custom-select custom-select-sm ">
                         @foreach ($listShop as $item)
-                        <option value="{{$item->id}}">{{$item->ten_shop}}</option>
+                        <option value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
                       </select>
                   </div>
                   <div class="form-group">
                       <label for="exampleInputEmail1">Tên danh mục</label>
-                      <input type="text" class="form-control" name="name_category" aria-describedby="emailHelp" placeholder="Tên danh mục">
+                      <input type="text" class="form-control" name="name_menu_foods" id="name_menu_foods" aria-describedby="emailHelp" placeholder="Tên danh mục">
                       <small id="emailHelp" class="form-text text-danger">Tên danh mục không được để trống</small>
                   </div>
                   
                   <div class="form-group form-check">
-                      <input type="checkbox" value="0" class="form-check-input" name="trang_thai" checked id="exampleCheck1">
+                      <input type="checkbox" value="0" class="form-check-input" name="statusMenuFoods" checked id="statusMenuFoods">
                       <label class="form-check-label" for="exampleCheck1">Ẩn/Hiện</label>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-primary add_category">Thêm</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>              
                 </div>
               </form>
                 </div>

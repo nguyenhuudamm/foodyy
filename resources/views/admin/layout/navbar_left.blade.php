@@ -38,8 +38,8 @@
                     <span>Danh mục shop</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="{{route('admin.category_shop')}}">Danh sách</a></li>
-                    <li><a  data-toggle="modal" href="#myModal">Thêm</a></li>
+                    <li><a  href="{{route('admin.viewMenuFoods')}}">Danh sách</a></li>
+                    <li><a  data-toggle="modal" href="#menuFoodsModal">Thêm</a></li>
                 </ul>
             </li>
             <li class="sub-menu">

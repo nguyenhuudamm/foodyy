@@ -51,16 +51,19 @@ Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục quán ăn
 	// Route::group(['prefix' => 'category_shop'], function(){
 		// danh sach
-		// Route::get('/', 'menu_foods@index')->name('admin.category_shop');
+		Route::get('/view-menu-foods', 'menu_foods@index')->name('admin.viewMenuFoods');
 		//thêm
-		Route::post('/add', 'category_shop@add_category')->name('admin.add_category');
+		Route::post('/addMenuFoods', 'menu_foods@addMenuFoods')->name('admin.addMenuFoods');
 
 		//sửa
-		Route::get('/view-update/{id}', 'category_shop@index')->name('admin.view-update');
-		Route::put('/update', 'category_shop@add_category')->name('admin.add_category');
+		Route::post('/editMenuFoods', 'menu_foods@editMenuFoods')->name('admin.editMenuFoods');
+		Route::post('/updateMenuFoods', 'menu_foods@updateMenuFoods')->name('admin.updateMenuFoods');
 		//xóa
+		
 
-		Route::post('/', 'category_shop@delete_category')->name('admin.delete_category');
+		Route::post('/deleteMenuFoods', 'menu_foods@deleteMenuFoods')->name('admin.deleteMenuFoods');
+		Route::post('/menuFoodsChangStatus', 'menu_foods@menuFoodsChangStatus')->name('admin.menuFoodsChangStatus');
+
 		
 	// });
 

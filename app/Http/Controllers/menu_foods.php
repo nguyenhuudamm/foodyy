@@ -3,48 +3,84 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\model_category_shop;
+use App\model_menu_foods;
 use App\model_shop;
 
 class menu_foods extends Controller
 {
     public function index(){
-      $list = model_category_shop::all();
+      $list = model_menu_foods::all();
       $listShop = model_shop::all();
-
       return view('admin.content.category_shop', ['list' => $list, 'listShop' => $listShop]);
     }
 
     public function foods(){
        return view('admin.content.foods');
     }
-    public function add_category(Request $request){
-      $dataInsert = new model_category_shop();
-      $dataInsert->id_shop = $request->id_shop;
-      $dataInsert->ten_danhmuc = $request->name_category;
-      $dataInsert->ten_khongdau = $this->convert_vi_to_en($request->name_category);
-      $dataInsert->trang_thai = $request->trang_thai;
-      $dataInsert->save();
-      return $this->index();
+    public function addMenuFoods(Request $request){
+      $dataAdd = new model_menu_foods();
+      $dataAdd->shop_id = $request->MF_id_shop;
+      $dataAdd->name = $request->name_menu_foods;
+      $dataAdd->unsigned_name = $this->convert_vi_to_en($request->name_menu_foods);
+      if($request->statusMenuFoods = "") {
+        $dataAdd->status = 0;
+      } else {        
+        $dataAdd->status = 1;
+      }
+      if($dataAdd->save()){
+        echo $dataAdd->id;
+      }else {
+        echo -1;
+      }
     } 
-    public function view_update() {
-      // $list = model_category_shop::all();
-      // $listShop = model_shop::all();
-
-      // return view('admin.content.category_shop', ['list' => $list, 'listShop' => $listShop]);
-
+    public function editMenuFoods(Request $request) {
+      $id = $request->get('id');
+      $list = model_menu_foods::find($id);
+      echo json_encode($list);
     }
 
-    public function delete_category(Request $request){
+    public function deleteMenuFoods(Request $request){
       $id= $request->get('id');
       
-      $menu = model_category_shop::find($id);
+      $menu = model_menu_foods::find($id);
       if($menu->delete()){
          echo 1;
       }else{
          echo -1;
       }
     }
+
+    public function menuFoodsChangStatus(Request $request){
+      $id = $request->get('id');
+      $tab = model_menu_foods::find($id);
+      $status = $tab->status;
+      if($status == 1){
+          //tat'
+          $tab->status = 0;
+          $tab->save();
+          echo 0;
+      }else{
+          // mo
+          $tab->status = 1;
+          $tab->save();
+          echo 1;
+      }
+     
+  }
+
+  public function updateMenuFoods(Request $request){
+    $idTab = $request->get('idMenuFoods');
+  
+    $dataAdd =  model_menu_foods::find($idTab);
+    $dataAdd->shop_id = $request->MF_id_shop;
+    $dataAdd->name = $request->name_menu_foods;
+    $dataAdd->unsigned_name = $this->convert_vi_to_en($request->name_menu_foods);
+    if($dataAdd->save()){
+        echo 1;
+    }else{
+        echo -1;
+    }
+}
 
    private function convert_vi_to_en($str) {
       $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", "a", $str);
@@ -63,5 +99,6 @@ class menu_foods extends Controller
       $str = preg_replace("/(Đ)/", "D", $str);
       //$str = str_replace(" ", "-", str_replace("&*#39;","",$str));
       return $str;
+    
   }
 }

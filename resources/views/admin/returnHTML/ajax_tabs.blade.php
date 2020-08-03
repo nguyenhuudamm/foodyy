@@ -87,9 +87,8 @@ $(document).ready(function(){
                         html +=        '<td class="hidden-phone">'+nameTag+'</td>';
                         html +=        '<td class="pl-4"><button id="'+data+'" type="button" class="btn btn-danger btn-sm click_change">Tắt</button></td>';
                         html +=        '<td>';
-                        html +=        '<button id="'+data+'" class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>';
                         html +=        '<button id="'+data+'" class="btn btn-primary btn-sm editTab"><i class="fa fa-pencil"></i></button>';
-                        html +=        '<button id="'+data+'" class="btn btn-danger btn-sm"><i class="fa fa-trash-o "></i></button>';
+                        html +=        '<button id="'+data+'" class="btn btn-danger btn-sm deleteTab"><i class="fa fa-trash-o"></i></button>';
                         html +=        '</td>';
                         html +=    '</tr>';
                         $('table tbody').prepend(html);

@@ -18,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 //admin
 
 Route::get('test', 'tabs@editTab');
+Route::get('test2', function(){
+	$shop = App\model_shop::find(1)->active_shops;
+	foreach ($shop as $value) {
+		echo $value->id;
+	}
+	
+});
 Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục cha
 	Route::group(['prefix' => 'category'], function(){
@@ -50,17 +57,17 @@ Route::group(['prefix' => 'admin'], function(){
 
 	// quản lí danh mục quán ăn
 	// Route::group(['prefix' => 'category_shop'], function(){
-		// danh sach
-		// Route::get('/', 'menu_foods@index')->name('admin.category_shop');
-		//thêm
-		Route::post('/add', 'category_shop@add_category')->name('admin.add_category');
+	// 	danh sach
+	// 	Route::get('/', 'menu_foods@index')->name('admin.category_shop');
+	// 	thêm
+	// 	Route::post('/add', 'category_shop@add_category')->name('admin.add_category');
 
-		//sửa
-		Route::get('/view-update/{id}', 'category_shop@index')->name('admin.view-update');
-		Route::put('/update', 'category_shop@add_category')->name('admin.add_category');
-		//xóa
+	// 	//sửa
+	// 	Route::get('/view-update/{id}', 'category_shop@index')->name('admin.view-update');
+	// 	Route::put('/update', 'category_shop@add_category')->name('admin.add_category');
+	// 	//xóa
 
-		Route::post('/', 'category_shop@delete_category')->name('admin.delete_category');
+	// 	Route::post('/', 'category_shop@delete_category')->name('admin.delete_category');
 		
 	// });
 
@@ -70,11 +77,15 @@ Route::group(['prefix' => 'admin'], function(){
 		// danh sach
 		Route::get('/', 'foods@foods')->name('admin.foods');
 		//thêm
+		Route::post('addFood', 'foods@addFood')->name('foods.addFood');
 		//sửa
 		//xóa
 		//test
-		Route::post('test', 'foods@test')->name('foods.test');
+		Route::get('test', 'foods@fetch_modal_add_food')->name('foods.test');
+		Route::get('test2', 'foods@fetch_view_modal');
+		// upload file
 		Route::post('uploadFile', 'foods@uploadFile')->name('foods.uploadFile');
+		
 	});
 });
 

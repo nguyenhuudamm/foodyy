@@ -4,11 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class model_tab_childs extends Model
+class model_time_has_foods extends Model
 {
-    protected $table = "tab_childs";
+      protected $table = "time_has_foods";
     public $timetamps = false;
-
-    
-    
 }

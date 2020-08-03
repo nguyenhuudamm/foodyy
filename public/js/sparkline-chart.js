@@ -1,5 +1,5 @@
 var Script = function () {
-
+if($(".sparkline").length != 0){
     $(".sparkline").each(function(){
         var $data = $(this).data();
 
@@ -9,15 +9,12 @@ var Script = function () {
         {
             tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
             '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
-        });
-
-
-
-
-    });
+        })
+    })
+}
 
 //sparkline chart
-
+if($("#barchart").length != 0){
     $("#barchart").sparkline([5,3,6,7,5,6,4,2,3,4,6,8,9,10,8,6,5,7,6,5,4,7,4], {
         type: 'bar',
         height: '65',
@@ -27,9 +24,12 @@ var Script = function () {
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
 
-    });
+    })
+}
 
 
+
+if($("#linechart").length != 0){
     $("#linechart").sparkline([1,5,3,7,9,3,6,4,7,9,7,6,2], {
         type: 'line',
         width: '300',
@@ -46,11 +46,11 @@ var Script = function () {
         highlightLineColor: '#ffffff'
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
-
-
-
     });
+}
 
+
+if($("#pie-chart").length != 0){
     $("#pie-chart").sparkline([2,1,1,1], {
         type: 'pie',
         width: '100',
@@ -60,9 +60,12 @@ var Script = function () {
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
     });
+}
+
+
 
     //work progress bar
-
+if($("#work-progress1").length != 0){
     $("#work-progress1").sparkline([5,6,7,5,9,6,4], {
         type: 'bar',
         height: '20',
@@ -72,7 +75,9 @@ var Script = function () {
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
     });
+}
 
+if($("#work-progress2").length != 0){
     $("#work-progress2").sparkline([3,2,5,8,4,7,5], {
         type: 'bar',
         height: '22',
@@ -82,7 +87,9 @@ var Script = function () {
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
     });
+}
 
+if($("#work-progress3").length != 0){
     $("#work-progress3").sparkline([1,6,9,3,4,8,5], {
         type: 'bar',
         height: '22',
@@ -92,7 +99,9 @@ var Script = function () {
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
     });
+}
 
+if($("#work-progress4").length != 0){
     $("#work-progress4").sparkline([9,4,9,6,7,4,3], {
         type: 'bar',
         height: '22',
@@ -102,7 +111,10 @@ var Script = function () {
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
     });
+}
 
+
+if($("#work-progress5").length != 0){
     $("#work-progress5").sparkline([6,8,5,7,6,8,3], {
         type: 'bar',
         height: '22',
@@ -112,7 +124,9 @@ var Script = function () {
 //        tooltipFormat: '<span style="display:block; padding:0px 10px 12px 0px;">' +
 //            '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'
     });
+}
 
+if($("#pie-chart2").length != 0){
     $("#pie-chart2").sparkline([2,1,1,1], {
         type: 'pie',
         width: '250',
@@ -122,5 +136,7 @@ var Script = function () {
 //    '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)</span>'});
 
     });
+}
+
 
 }();

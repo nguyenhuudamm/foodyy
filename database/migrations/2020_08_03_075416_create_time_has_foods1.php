@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTimeHasFoods extends Migration
+class CreateTimeHasFoods1 extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class CreateTimeHasFoods extends Migration
                 $table->string('start_time')->nullable(); 
                 $table->string('end_time')->nullable();
                 $table->timestamps();
-                $table->foreign('food_id')->references('id')->on('foods');
+                $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade')->onUpdate('cascade');;
             });
         }
     }

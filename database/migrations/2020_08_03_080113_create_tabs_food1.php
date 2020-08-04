@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTabsFood extends Migration
+class CreateTabsFood1 extends Migration
 {
     /**
      * Run the migrations.
@@ -18,8 +18,9 @@ class CreateTabsFood extends Migration
                 $table->bigIncrements('id');
                 $table->unsignedBigInteger('food_id');
                 $table->unsignedBigInteger('tab_id');
-                $table->foreign('food_id')->references('id')->on('foods');
-                $table->foreign('tab_id')->references('id')->on('tabs');
+                $table->timestamps();
+                $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade')->onUpdate('cascade');;
+                $table->foreign('tab_id')->references('id')->on('tab_childs')->onDelete('cascade')->onUpdate('cascade');;
             });
         }
     }

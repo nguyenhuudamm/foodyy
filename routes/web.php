@@ -79,9 +79,13 @@ Route::group(['prefix' => 'admin'], function(){
 		//thêm
 		Route::post('addFood', 'foods@addFood')->name('foods.addFood');
 		//sửa
+		Route::post('editFood', 'foods@editFood')->name('foods.editFood');
+		//cập nhật
+		Route::post('updateFood', 'foods@updateFood')->name('foods.updateFood');
 		//xóa
+		Route::post('deleteFood', 'foods@deleteFood')->name('foods.deleteFood');
 		//test
-		Route::get('test', 'foods@fetch_modal_add_food')->name('foods.test');
+		Route::get('test', 'foods@updateFood')->name('foods.test');
 		Route::get('test2', 'foods@fetch_view_modal');
 		// upload file
 		Route::post('uploadFile', 'foods@uploadFile')->name('foods.uploadFile');

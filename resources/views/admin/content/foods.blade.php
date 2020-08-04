@@ -118,29 +118,31 @@
     </section>
 
     <div class="row product-list _foods">
+      @foreach($list_food as $value)
       <!-- 1 món ăn -->
       <div class="col-md-3">
         <section class="card _1_food">
           <div class="pro-img-box">
-              <img src="{{asset('img/product-list/pro-1.jpg')}}" alt=""/>
+              <img src=".././image/foodys/{{$value->image}}" alt=""/>
           </div>
           <div class="img-icon">
             <span><img src="{{asset('img/img_icon/icon_freeship.png')}}" alt=""></span>
             <span><img src="{{asset('img/img_icon/icon_hot.png')}}" alt=""></span>
           </div>
           <div class="card-body text-center m-0 p-0">
-              <h4 class="p-0 m-0"><a href="#" class="pro-title mt-1">Leopard Shirt Dress</a></h4>
+              <h4 class="p-0 m-0"><a href="#" class="pro-title mt-1">{{$value->name}}</a></h4>
           </div>
           <div class="d-flex align-items-center mb-2">
-            <div class="price flex-fill pl-2">300.000</div>
+            <div class="price flex-fill pl-2">{{$value->price}}</div>
             <div class="btn-handling flex-fill">
-              <div class=""><i class="fa fa-edit"></i></div>
-               <div class=" "><i class="fa fa-trash-o"></i></div>
+              <div id="{{$value->id}}" class="edit_food"><i class="fa fa-edit"></i></div>
+              <div id="{{$value->id}}" class="delele_food"><i class="fa fa-trash-o"></i></div>
             </div>
           </div>
         </section>
       </div>
       <!-- end 1 món ăn -->
+      @endforeach
     </div>
     
   </div>
@@ -169,7 +171,6 @@
                           <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
-                                    <div class="btn btn-check btn-info">check</div>
                                     <label for="">Tên món ăn</label>
                                     <input type="text" class="form-control" name="name_food" aria-describedby="emailHelp" placeholder="Tên món ăn">
                                     <small id="emailHelp" class="error error_name form-text text-danger">Tên món ăn không được để trống</small>
@@ -226,15 +227,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Món ăn có vào:</label>
+                                    <?php $i = 1; ?>
                                     @foreach($active_shop as $value)
                                     <?php 
                                       if($value->session == 1){ $session = 'Buổi sáng';}
                                       elseif($value->session == 2){ $session = 'Buổi trưa';}
                                       elseif($value->session == 3){ $session = 'Buổi chiều';}
                                       elseif($value->session == 4){ $session = 'Buổi tối';}
+                                      if($i == 1){ $check = 'checked';}else{ $check = '';}
+                                      $i++;
                                     ?>
                                     <label class="label_check c_off mr-3 d-flex align-items-center w-100" for="">
-                                        <span class="w-25"><input name="session_food[]" id="" checked value="{{$value->id}}" type="checkbox">{{$session}}</span>
+                                        <span class="w-25"><input name="session_food[]" id="" <?php echo $check; ?> value="{{$value->id}}" type="checkbox">{{$session}}</span>
                                         <span class="flex-grows-1 d-flex justify-content-start">
                                         <span class=""><input type="time" class="rounded time_foods" min="{{$value->time_open}}" max="{{$value->time_close}}" name="start_time[]" onblur=""  value="{{$value->time_open}}"> &nbsp - &nbsp &nbsp</span>
                                         <span class=""><input type="time" class="rounded time_foods" min="{{$value->time_open}}" max="{{$value->time_close}}" name="end_time[]" onblur=""  value="{{$value->time_close}}"></span>
@@ -271,9 +275,10 @@
                       <fieldset title="Chi tiết món ăn" class="step" id="default-step-2" >
                           <legend></legend>
                           <div class="row px-3 mb-4">
-                            <textarea name="detail_food" class="summernote">Hello Summernote</textarea>
+                            <textarea name="detail_food" class="summernote"></textarea>
                           </div>
                       </fieldset>
+                      <input type="hidden" name="id_food" value="">
                       <input type="submit" class="finish btn btn-danger" value="Thêm"/>
                   </form>
               </div>
@@ -282,7 +287,6 @@
     </div>
 </div>
 <!-- modal -->
-
 @endsection
 
 

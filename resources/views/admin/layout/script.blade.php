@@ -62,6 +62,8 @@
    <script src="{{asset('assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js')}}"></script>
   <!--script for this page-->
     <script src="{{asset('js/jquery.stepy.js')}}"></script>
+  <!--toastr-->
+  <script src="{{asset('assets/toastr-master/toastr.js')}}"></script>
    
     <script type="text/javascript" language="javascript" src="{{asset('assets/advanced-datatable/media/js/jquery.dataTables.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/data-tables/DT_bootstrap.js')}}"></script>
@@ -136,6 +138,8 @@
           });
 
           $("#slider-range-amount").text("" + $("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+        
+
 
       });
 

@@ -31,7 +31,9 @@
 <!--right slidebar-->
 <link href="{{asset('css/slidebars.css')}}" rel="stylesheet">
  <!--  summernote -->
-      <link href="{{asset('assets/summernote/summernote-bs4.css')}}" rel="stylesheet">
+<link href="{{asset('assets/summernote/summernote-bs4.css')}}" rel="stylesheet">
+<!--toastr-->
+<link href="{{asset('assets/toastr-master/toastr.css')}}" rel="stylesheet" type="text/css" />
 
 <!-- Custom styles for this template -->
 
@@ -83,6 +85,11 @@
 	._1_food a.pro-title {
 	    font-size: 16px;
 	    margin-bottom: 10px;
+	}
+	._1_food .pro-img-box img{
+		object-fit:cover;
+		width: 100%;
+		height: 200px;
 	}
 
 	._1_food .price {

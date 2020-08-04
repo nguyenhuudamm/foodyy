@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableIngredient extends Migration
+class CreateTableIngredient1 extends Migration
 {
     /**
      * Run the migrations.
@@ -23,8 +23,8 @@ class CreateTableIngredient extends Migration
                 $table->string('weight')->nullable(); // miêu tả
                 $table->string('dvt')->nullable(); 
                 $table->timestamps();
-                $table->foreign('food_id')->references('id')->on('foods');
-                $table->foreign('quantitative_id')->references('id')->on('quantitative');
+                $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade')->onUpdate('cascade');;
+                $table->foreign('quantitative_id')->references('id')->on('quantitative')->onDelete('cascade')->onUpdate('cascade');;
             });
         }
     }

@@ -18,6 +18,7 @@ class CreateTableFoods extends Migration
                 $table->bigIncrements('id');
                 $table->unsignedBigInteger('menu_food_id');
                 $table->unsignedBigInteger('sale_id')->default(0);
+                  $table->unsignedBigInteger('shop_id');
                 $table->string('name');
                 $table->string('unsigned_name')->nullable(); 
                 $table->string('description')->nullable(); // miêu tả
@@ -28,6 +29,7 @@ class CreateTableFoods extends Migration
                 $table->timestamps();
                 $table->foreign('menu_food_id')->references('id')->on('menu_foods');
                 $table->foreign('sale_id')->references('id')->on('sales');
+                $table->foreign('shop_id')->references('id')->on('shop');
             });
         }
     }

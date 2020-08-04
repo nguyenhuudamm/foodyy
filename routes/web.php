@@ -18,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 //admin
 
 Route::get('test', 'tabs@editTab');
+Route::get('test2', function(){
+	$shop = App\model_shop::find(1)->active_shops;
+	foreach ($shop as $value) {
+		echo $value->id;
+	}
+	
+});
 Route::group(['prefix' => 'admin'], function(){
 	// quản lí danh mục cha
 	Route::group(['prefix' => 'category'], function(){
@@ -73,11 +80,19 @@ Route::group(['prefix' => 'admin'], function(){
 		// danh sach
 		Route::get('/', 'foods@foods')->name('admin.foods');
 		//thêm
+		Route::post('addFood', 'foods@addFood')->name('foods.addFood');
 		//sửa
+		Route::post('editFood', 'foods@editFood')->name('foods.editFood');
+		//cập nhật
+		Route::post('updateFood', 'foods@updateFood')->name('foods.updateFood');
 		//xóa
+		Route::post('deleteFood', 'foods@deleteFood')->name('foods.deleteFood');
 		//test
-		Route::post('test', 'foods@test')->name('foods.test');
+		Route::get('test', 'foods@updateFood')->name('foods.test');
+		Route::get('test2', 'foods@fetch_view_modal');
+		// upload file
 		Route::post('uploadFile', 'foods@uploadFile')->name('foods.uploadFile');
+		
 	});
 });
 

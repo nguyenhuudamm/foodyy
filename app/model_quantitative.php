@@ -4,11 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class model_tab_childs extends Model
+class model_quantitative extends Model
 {
-    protected $table = "tab_childs";
+    protected $table = "quantitative";
     public $timetamps = false;
 
-    
-    
 }

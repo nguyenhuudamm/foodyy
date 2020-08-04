@@ -9,6 +9,9 @@ class model_menu_foods extends Model
      protected $table = "menu_foods";
     public $timetamps = false;
 
+    protected $table = "menu_foods";
+	public $timetamps = false;
+
     
 }
 
